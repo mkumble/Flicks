@@ -16,6 +16,11 @@
 		1CAA74EC1D87715E00E727C8 /* MovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CAA74EB1D87715E00E727C8 /* MovieCell.m */; };
 		1CAA74F01D878E1700E727C8 /* MovieDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CAA74EF1D878E1700E727C8 /* MovieDetailViewController.m */; };
 		1CAA74F31D886FF500E727C8 /* TrailerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CAA74F21D886FF500E727C8 /* TrailerViewController.m */; };
+		1CAE6A3F1D8A7A8300630397 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CAE6A3E1D8A7A8300630397 /* MediaPlayer.framework */; };
+		1CAE6A421D8A82D100630397 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CAE6A401D8A82D100630397 /* AVFoundation.framework */; };
+		1CAE6A431D8A82D100630397 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CAE6A411D8A82D100630397 /* AVKit.framework */; };
+		1CAE6A461D8B2B4400630397 /* MovieCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CAE6A451D8B2B4400630397 /* MovieCollectionViewCell.m */; };
+		1CAE6A481D8B6E5400630397 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CAE6A471D8B6E5300630397 /* SystemConfiguration.framework */; };
 		2A30AF6D453321B440236987 /* libPods-Flicks.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BABEB7B41A06F25D716B4B1 /* libPods-Flicks.a */; };
 		5E3E1AF452973EE191B65BF9 /* libPods-Flicks.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AFA045F0D00E4BAA62885DD /* libPods-Flicks.a */; };
 /* End PBXBuildFile section */
@@ -25,18 +30,24 @@
 		1CAA74D31D8759C400E727C8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1CAA74D51D8759C400E727C8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1CAA74D61D8759C400E727C8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		1CAA74D81D8759C400E727C8 /* MoviesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MoviesViewController.h; path = Flicks/MoviesViewController.h; sourceTree = "<group>"; };
-		1CAA74D91D8759C400E727C8 /* MoviesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MoviesViewController.m; path = Flicks/MoviesViewController.m; sourceTree = "<group>"; };
+		1CAA74D81D8759C400E727C8 /* MoviesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoviesViewController.h; sourceTree = "<group>"; };
+		1CAA74D91D8759C400E727C8 /* MoviesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoviesViewController.m; sourceTree = "<group>"; };
 		1CAA74DC1D8759C400E727C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1CAA74DE1D8759C400E727C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1CAA74E11D8759C400E727C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1CAA74E31D8759C400E727C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1CAA74EA1D87715E00E727C8 /* MovieCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MovieCell.h; path = Flicks/MovieCell.h; sourceTree = "<group>"; };
 		1CAA74EB1D87715E00E727C8 /* MovieCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MovieCell.m; path = Flicks/MovieCell.m; sourceTree = "<group>"; };
-		1CAA74EE1D878E1700E727C8 /* MovieDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieDetailViewController.h; sourceTree = "<group>"; };
-		1CAA74EF1D878E1700E727C8 /* MovieDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieDetailViewController.m; sourceTree = "<group>"; };
-		1CAA74F11D886FF500E727C8 /* TrailerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrailerViewController.h; sourceTree = "<group>"; };
-		1CAA74F21D886FF500E727C8 /* TrailerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrailerViewController.m; sourceTree = "<group>"; };
+		1CAA74EE1D878E1700E727C8 /* MovieDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MovieDetailViewController.h; path = ../MovieDetailViewController.h; sourceTree = "<group>"; };
+		1CAA74EF1D878E1700E727C8 /* MovieDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MovieDetailViewController.m; path = ../MovieDetailViewController.m; sourceTree = "<group>"; };
+		1CAA74F11D886FF500E727C8 /* TrailerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TrailerViewController.h; path = ../TrailerViewController.h; sourceTree = "<group>"; };
+		1CAA74F21D886FF500E727C8 /* TrailerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TrailerViewController.m; path = ../TrailerViewController.m; sourceTree = "<group>"; };
+		1CAE6A3E1D8A7A8300630397 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		1CAE6A401D8A82D100630397 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		1CAE6A411D8A82D100630397 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		1CAE6A441D8B2B4400630397 /* MovieCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieCollectionViewCell.h; sourceTree = "<group>"; };
+		1CAE6A451D8B2B4400630397 /* MovieCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieCollectionViewCell.m; sourceTree = "<group>"; };
+		1CAE6A471D8B6E5300630397 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		1D0174D4D7DFDDF1B1447999 /* Pods-Flicks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flicks.release.xcconfig"; path = "Pods/Target Support Files/Pods-Flicks/Pods-Flicks.release.xcconfig"; sourceTree = "<group>"; };
 		3AFA045F0D00E4BAA62885DD /* libPods-Flicks.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Flicks.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C299CD540C1F8BFF2AAC0F0 /* Pods-Flicks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flicks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Flicks/Pods-Flicks.debug.xcconfig"; sourceTree = "<group>"; };
@@ -50,6 +61,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CAE6A481D8B6E5400630397 /* SystemConfiguration.framework in Frameworks */,
+				1CAE6A421D8A82D100630397 /* AVFoundation.framework in Frameworks */,
+				1CAE6A431D8A82D100630397 /* AVKit.framework in Frameworks */,
+				1CAE6A3F1D8A7A8300630397 /* MediaPlayer.framework in Frameworks */,
 				2A30AF6D453321B440236987 /* libPods-Flicks.a in Frameworks */,
 				5E3E1AF452973EE191B65BF9 /* libPods-Flicks.a in Frameworks */,
 			);
@@ -58,24 +73,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1C76884A1D88FED900BE5280 /* view controllers */ = {
+		1C76884A1D88FED900BE5280 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-			);
-			name = "view controllers";
-			sourceTree = "<group>";
-		};
-		1CAA74C61D8759C300E727C8 = {
-			isa = PBXGroup;
-			children = (
-				1CAA74EA1D87715E00E727C8 /* MovieCell.h */,
-				1CAA74EB1D87715E00E727C8 /* MovieCell.m */,
 				1CAA74D81D8759C400E727C8 /* MoviesViewController.h */,
 				1CAA74D91D8759C400E727C8 /* MoviesViewController.m */,
 				1CAA74F11D886FF500E727C8 /* TrailerViewController.h */,
 				1CAA74F21D886FF500E727C8 /* TrailerViewController.m */,
 				1CAA74EE1D878E1700E727C8 /* MovieDetailViewController.h */,
 				1CAA74EF1D878E1700E727C8 /* MovieDetailViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		1CAA74C61D8759C300E727C8 = {
+			isa = PBXGroup;
+			children = (
 				1CAA74D11D8759C400E727C8 /* Flicks */,
 				1CAA74D01D8759C400E727C8 /* Products */,
 				27D7D908B0D870F9F0BAE532 /* Pods */,
@@ -94,11 +107,13 @@
 		1CAA74D11D8759C400E727C8 /* Flicks */ = {
 			isa = PBXGroup;
 			children = (
-				1C76884A1D88FED900BE5280 /* view controllers */,
+				1CAE6A3D1D89DBFA00630397 /* Views */,
+				1C76884A1D88FED900BE5280 /* View Controllers */,
 				1CAA74D51D8759C400E727C8 /* AppDelegate.h */,
 				1CAA74D61D8759C400E727C8 /* AppDelegate.m */,
-				1CAA74E91D87710B00E727C8 /* Views */,
 				1CAA74DB1D8759C400E727C8 /* Main.storyboard */,
+				1CAE6A441D8B2B4400630397 /* MovieCollectionViewCell.h */,
+				1CAE6A451D8B2B4400630397 /* MovieCollectionViewCell.m */,
 				1CAA74DE1D8759C400E727C8 /* Assets.xcassets */,
 				1CAA74E01D8759C400E727C8 /* LaunchScreen.storyboard */,
 				1CAA74E31D8759C400E727C8 /* Info.plist */,
@@ -115,11 +130,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		1CAA74E91D87710B00E727C8 /* Views */ = {
+		1CAE6A3D1D89DBFA00630397 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1CAA74EB1D87715E00E727C8 /* MovieCell.m */,
+				1CAA74EA1D87715E00E727C8 /* MovieCell.h */,
 			);
 			name = Views;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		27D7D908B0D870F9F0BAE532 /* Pods */ = {
@@ -136,6 +154,10 @@
 		EAC9DB34D1F25693FB4BD5C1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1CAE6A471D8B6E5300630397 /* SystemConfiguration.framework */,
+				1CAE6A401D8A82D100630397 /* AVFoundation.framework */,
+				1CAE6A411D8A82D100630397 /* AVKit.framework */,
+				1CAE6A3E1D8A7A8300630397 /* MediaPlayer.framework */,
 				5BABEB7B41A06F25D716B4B1 /* libPods-Flicks.a */,
 				3AFA045F0D00E4BAA62885DD /* libPods-Flicks.a */,
 			);
@@ -270,6 +292,7 @@
 				1CAA74EC1D87715E00E727C8 /* MovieCell.m in Sources */,
 				1CAA74F31D886FF500E727C8 /* TrailerViewController.m in Sources */,
 				1CAA74D41D8759C400E727C8 /* main.m in Sources */,
+				1CAE6A461D8B2B4400630397 /* MovieCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,8 @@ target 'Flicks' do
 
   # Pods for yahooDemo
 pod 'FTProgressIndicator'
+pod 'Reachability', '~> 3.2'
 pod 'AFNetworking'
+
 end
 	

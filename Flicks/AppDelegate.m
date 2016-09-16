@@ -29,6 +29,7 @@
     
     MoviesViewController *topRatedViewController = (MoviesViewController *)[topRatedNavigationController topViewController];
     topRatedViewController.endpoint = @"top_rated";
+    [topRatedViewController setTitle:@"Top Rated Movies"];
     
     UINavigationController *nowPlayingNavigationController = [storyboard instantiateViewControllerWithIdentifier:@"MoviesNavigationController"];
     
@@ -38,7 +39,7 @@
     
     MoviesViewController *nowPlayingController = (MoviesViewController *)[nowPlayingNavigationController topViewController];
     nowPlayingController.endpoint = @"now_playing";
-    
+        [nowPlayingController setTitle:@"Now Playing Movies"];
   
     
     UITabBarController *tabBarController = [[UITabBarController alloc] init];

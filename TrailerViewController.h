@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
+#import <AVKit/AVKit.h>
 
-@interface TrailerViewController : UIViewController
-
+@interface TrailerViewController : AVPlayerViewController
+@property(nonatomic, strong) NSDictionary *movie;
 @end
