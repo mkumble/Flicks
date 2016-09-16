@@ -23,8 +23,8 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UINavigationController *topRatedNavigationController = [storyboard instantiateViewControllerWithIdentifier:@"MoviesNavigationController"];
     
-    topRatedNavigationController.tabBarItem.title = @"Now Playing";
-    topRatedNavigationController.tabBarItem.image = [UIImage imageNamed:@"now_playing"];
+    topRatedNavigationController.tabBarItem.title = @"Top Rated";
+    topRatedNavigationController.tabBarItem.image = [UIImage imageNamed:@"top_rated"];
     
     
     MoviesViewController *topRatedViewController = (MoviesViewController *)[topRatedNavigationController topViewController];
@@ -33,8 +33,8 @@
     
     UINavigationController *nowPlayingNavigationController = [storyboard instantiateViewControllerWithIdentifier:@"MoviesNavigationController"];
     
-    nowPlayingNavigationController.tabBarItem.title = @"Top Rated";
-      nowPlayingNavigationController.tabBarItem.image = [UIImage imageNamed:@"top_rated"];
+    nowPlayingNavigationController.tabBarItem.title = @"Now Playing";
+      nowPlayingNavigationController.tabBarItem.image = [UIImage imageNamed:@"now_playing"];
     
     
     MoviesViewController *nowPlayingController = (MoviesViewController *)[nowPlayingNavigationController topViewController];

@@ -13,7 +13,8 @@
 #import "UIImageView+AFNetworking.h"
 #import "TrailerViewController.h"
 #import "MovieCollectionViewCell.h"
-#import <Reachability/Reachability.h>
+#import <SystemConfiguration/CaptiveNetwork.h>
+#import "Reachability.h"
 
 @interface MoviesViewController () <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
 
@@ -27,7 +28,9 @@
 
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (nonatomic, strong) Reachability * reachability;
 
+@property (weak, nonatomic) IBOutlet UIView *networkConnectionMessageView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControlOutlet;
 @end
 
@@ -36,12 +39,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    ((UIView *)self.segmentedControlOutlet.subviews[0]).tintColor = [UIColor grayColor];
+    
+    ((UIView *)self.segmentedControlOutlet.subviews[1]).tintColor = [UIColor blueColor];
+    
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    
+    
+    [self setUpRechability];
     
     [self.collectionView setHidden:YES];
     
     self.searchBar.delegate = self;
     self.searchBar.placeholder = @"Search Movies";
+
+                                                         [self.segmentedControlOutlet setImage:[UIImage imageNamed:@"list-1"] forSegmentAtIndex:0];
     
+         [self.segmentedControlOutlet setImage:[UIImage imageNamed:@"grid"] forSegmentAtIndex:1];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
@@ -183,10 +197,18 @@
     {
         [self.tableView setHidden:NO];
         [self.collectionView setHidden:YES];
+        
+        ((UIView *)self.segmentedControlOutlet.subviews[0]).tintColor = [UIColor grayColor];
+        
+            ((UIView *)self.segmentedControlOutlet.subviews[1]).tintColor = [UIColor blueColor];
     }
     else if(self.segmentedControlOutlet.selectedSegmentIndex == 1)
     {[self.tableView setHidden:YES];
             [self.collectionView setHidden:NO];
+        
+        ((UIView *)self.segmentedControlOutlet.subviews[0]).tintColor = [UIColor blueColor];
+        
+        ((UIView *)self.segmentedControlOutlet.subviews[1]).tintColor = [UIColor grayColor];
 
     }
 }
@@ -217,5 +239,39 @@
     
     return cell;
 }
+
+
+
+
+
+
+
+-(void)setUpRechability
+{
+
+    
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNetworkChange:) name:kReachabilityChangedNotification object:nil];
+    
+self.reachability = [Reachability reachabilityForInternetConnection];
+    [self.reachability startNotifier];
+    
+    NetworkStatus remoteHostStatus = [self.reachability currentReachabilityStatus];
+    
+    if          (remoteHostStatus == NotReachable)      {        [self.networkConnectionMessageView setHidden:NO];   }
+    else  {           [self.networkConnectionMessageView setHidden:YES]; }
+}
+  
+
+
+
+- (void) handleNetworkChange:(NSNotification *)notice
+{
+    NetworkStatus remoteHostStatus = [self.reachability currentReachabilityStatus];
+    
+    
+    if          (remoteHostStatus == NotReachable)      {        [self.networkConnectionMessageView setHidden:NO];   }
+    else  {           [self.networkConnectionMessageView setHidden:YES]; }}
 
 @end
