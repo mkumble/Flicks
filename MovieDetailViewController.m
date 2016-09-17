@@ -8,6 +8,7 @@
 
 #import "MovieDetailViewController.h"
 #import "UIImageView+AFNetworking.h"
+#import "TrailerViewController.h"
 
 @interface MovieDetailViewController ()
 
@@ -65,5 +66,13 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (IBAction)onClickTrailerButton:(id)sender {
+    NSLog(@"%@",self.movie);
+    TrailerViewController* tc = [self.storyboard instantiateViewControllerWithIdentifier:@"TrailerViewController"];
+    [tc setMovie:self.movie];
+    [self.navigationController pushViewController:tc animated:YES];
+}
+
 
 @end
