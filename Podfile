@@ -9,6 +9,6 @@ target 'Flicks' do
 pod 'FTProgressIndicator'
 pod 'Reachability', '~> 3.2'
 pod 'AFNetworking'
-
+pod "youtube-ios-player-helper", "~> 0.1.4"
 end
 	

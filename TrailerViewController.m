@@ -10,6 +10,7 @@
 #import "FTProgressIndicator.h"
 #import <AVFoundation/AVFoundation.h>
 #import <AVKit/AVKit.h>
+#import "YTPlayerView.h"
 
 @interface TrailerViewController ()
 @property (nonatomic) NSArray * trailers;
@@ -62,7 +63,7 @@
                 NSLog(@"Response:%@",responseDictionary);
                 self.trailers = responseDictionary[@"results"];
                 
-        
+         [self.playerView loadWithVideoId:self.trailers[0][@"key"]];
                 
                          }
             else

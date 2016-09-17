@@ -33,9 +33,11 @@
     
     UINavigationController *nowPlayingNavigationController = [storyboard instantiateViewControllerWithIdentifier:@"MoviesNavigationController"];
     
-    nowPlayingNavigationController.tabBarItem.title = @"Now Playing";
-      nowPlayingNavigationController.tabBarItem.image = [UIImage imageNamed:@"now_playing"];
+          nowPlayingNavigationController.tabBarItem.image = [UIImage imageNamed:@"now_playing"];
+
     
+    nowPlayingNavigationController.tabBarItem.title = @"Now Playing";
+
     
     MoviesViewController *nowPlayingController = (MoviesViewController *)[nowPlayingNavigationController topViewController];
     nowPlayingController.endpoint = @"now_playing";

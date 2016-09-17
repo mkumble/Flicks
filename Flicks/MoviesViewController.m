@@ -29,8 +29,9 @@
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (nonatomic, strong) Reachability * reachability;
+@property (weak, nonatomic) IBOutlet UILabel *networkConnectionMessageLabel;
 
-@property (weak, nonatomic) IBOutlet UIView *networkConnectionMessageView;
+
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControlOutlet;
 @end
 
@@ -41,7 +42,7 @@
     
     ((UIView *)self.segmentedControlOutlet.subviews[0]).tintColor = [UIColor grayColor];
     
-    ((UIView *)self.segmentedControlOutlet.subviews[1]).tintColor = [UIColor blueColor];
+    ((UIView *)self.segmentedControlOutlet.subviews[1]).tintColor = [UIColor blackColor];
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     
@@ -86,7 +87,7 @@
         NSDictionary *movie = self.filteredMovies[indexPath.row];
     if(movie[@"poster_path"])
     {
-    NSString * baseURL = @"https://image.tmdb.org/t/p/w92/";
+    NSString * baseURL = @"https://image.tmdb.org/t/p/w500/";
     NSString *imageURL = [NSString stringWithFormat:@"%@%@",baseURL, movie[@"poster_path"]];
     [cell.posterView setImageWithURL:[NSURL URLWithString:imageURL]];
 
@@ -102,14 +103,15 @@
         [self.view endEditing:YES];
     
     
-    if([segue.identifier isEqualToString:@"detailSegueTableView"])
+    if([segue.identifier isEqualToString:@"movieDetailSegueViaTableView"])
     {    UITableView *cell = sender;
     NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
     MovieDetailViewController *vc = segue.destinationViewController;
     vc.movie = self.filteredMovies[indexPath.row];
+           NSLog(@"%@",vc.movie);
     }
     
-    else if([segue.identifier isEqualToString:@"detailSegueCollectionView"])
+    else if([segue.identifier isEqualToString:@"movieDetailSegueViaCollectionView"])
         {    UICollectionView *cell = sender;
             NSIndexPath *indexPath = [self.collectionView indexPathForCell:cell];
             MovieDetailViewController *vc = segue.destinationViewController;
@@ -120,6 +122,7 @@
         NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
         TrailerViewController * tc = segue.destinationViewController;
         tc.movie = self.filteredMovies[indexPath.row];
+        NSLog(@"TRAILLLLLLLLLL%@",tc.movie);
     }
 
 }
@@ -200,13 +203,13 @@
         
         ((UIView *)self.segmentedControlOutlet.subviews[0]).tintColor = [UIColor grayColor];
         
-            ((UIView *)self.segmentedControlOutlet.subviews[1]).tintColor = [UIColor blueColor];
+            ((UIView *)self.segmentedControlOutlet.subviews[1]).tintColor = [UIColor blackColor];
     }
     else if(self.segmentedControlOutlet.selectedSegmentIndex == 1)
     {[self.tableView setHidden:YES];
             [self.collectionView setHidden:NO];
         
-        ((UIView *)self.segmentedControlOutlet.subviews[0]).tintColor = [UIColor blueColor];
+        ((UIView *)self.segmentedControlOutlet.subviews[0]).tintColor = [UIColor blackColor];
         
         ((UIView *)self.segmentedControlOutlet.subviews[1]).tintColor = [UIColor grayColor];
 
@@ -229,7 +232,7 @@
     
     if(movie[@"poster_path"])
     {
-        NSString * baseURL = @"https://image.tmdb.org/t/p/w92/";
+        NSString * baseURL = @"https://image.tmdb.org/t/p/w500/";
         NSString *imageURL = [NSString stringWithFormat:@"%@%@",baseURL, movie[@"poster_path"]];
 
         
@@ -259,8 +262,8 @@ self.reachability = [Reachability reachabilityForInternetConnection];
     
     NetworkStatus remoteHostStatus = [self.reachability currentReachabilityStatus];
     
-    if          (remoteHostStatus == NotReachable)      {        [self.networkConnectionMessageView setHidden:NO];   }
-    else  {           [self.networkConnectionMessageView setHidden:YES]; }
+    if          (remoteHostStatus == NotReachable)      {        [self.networkConnectionMessageLabel setHidden:NO];   }
+    else  {           [self.networkConnectionMessageLabel setHidden:YES]; }
 }
   
 
@@ -271,7 +274,7 @@ self.reachability = [Reachability reachabilityForInternetConnection];
     NetworkStatus remoteHostStatus = [self.reachability currentReachabilityStatus];
     
     
-    if          (remoteHostStatus == NotReachable)      {        [self.networkConnectionMessageView setHidden:NO];   }
-    else  {           [self.networkConnectionMessageView setHidden:YES]; }}
+    if          (remoteHostStatus == NotReachable)      {        [self.networkConnectionMessageLabel setHidden:NO];   }
+    else  {           [self.networkConnectionMessageLabel setHidden:YES]; }}
 
 @end

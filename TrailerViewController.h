@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import <AVKit/AVKit.h>
+#import "YTPlayerView.h"
 
-@interface TrailerViewController : AVPlayerViewController
+@interface TrailerViewController : UIViewController
 @property(nonatomic, strong) NSDictionary *movie;
+@property(nonatomic, strong) IBOutlet YTPlayerView *playerView;
 @end
